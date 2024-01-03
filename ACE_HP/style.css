@@ -1,0 +1,546 @@
+body {
+    font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial,
+        sans-serif;
+}
+
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+}
+html, body{
+    height: 100%;
+}
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+input, button, textarea, select {
+    font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+#root, #__next {
+    isolation: isolate;
+  }
+   /* CSS Reset ここまで */
+.google-fonts{
+    font-family: "Noto Sans JP", sans-serif;
+}
+#header {
+        display: flex;
+        justify-content: space-between;
+}
+
+#header-logo {
+	padding: 10px 0 10px 25px;
+	opacity: 0;
+	transition: all 1.0s;
+}
+
+#nav-pc{
+    text-align: right;
+    font-size: 14px;
+    padding-top: 0;
+}
+
+ /* ナビゲーションのリンクの装飾設定 */
+ #nav-pc > a {
+    text-decoration: none;
+    margin-left: 20px;
+}
+#nav-pc > a:link {
+    color: #0d0d0d;
+}
+#nav-pc > a:visited {
+    color: #0d0d0d;
+}
+#nav-pc > a:hover {
+    color: #0d0d0d;
+    text-decoration: underline;
+}
+#nav-pc > a:active {
+    color: #0d0d0d;
+}
+
+/* メインビジュアル*/
+#main-visual {
+    padding: 0 30px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#main-visual > img {
+    max-width: 1250px;
+    position: relative;
+    z-index: 10;
+}
+
+#main-message {
+    font-family: 'Noto Serif JP', serif;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    color: #434343;
+    max-width: 1000px;
+    height: 100%;
+    width: 100%;
+    z-index: 11;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#main-message > h1 {
+    font-size: 65px;
+    position: relative;
+    margin: 0 0 0 0;
+    
+}
+#main-message > h4{
+    
+    font-size: 20px;
+    color: rgb(89, 89, 242);
+    
+}
+#main-message > p{
+    font-size: 20px;
+    margin:0 0 40px 0;
+}
+
+
+#service {
+    padding: 0;
+    width: 100%;
+    }
+
+.section-inner{
+    padding: 0;
+    width: 100%;
+    position: relative;
+    }    
+
+.section-inner .index-h2{
+    position: absolute;
+    font-size: 175px;
+    color: rgb(255, 255, 255, 0.25);
+    top: 0;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.section-inner.img-left .index-h2{
+    right: 50px;
+
+}
+
+.section-inner.img-right .index-h2{
+    left: 50px;
+    
+}
+
+.service-photo{
+    position: absolute;
+    width: 40%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.section-inner.img-left .service-photo{
+    left: 0;
+}
+
+.section-inner.img-right .service-photo{
+    right: 0;
+}
+
+.service-text{
+    width: calc( 60% + 50px);
+    min-height: 600px;
+    background-color: rgb(155, 201, 242);
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-inner.img-left .service-text{
+    margin-left: calc( 40% - 50px );
+    padding: 50px 50px 50px 100px;
+}   
+.section-inner.img-right .service-text{
+    margin-right: calc( 40% - 50px );
+    background-color: #bbbcf2;
+    padding: 50px 100px 50px 50px;
+}
+p > #service-top{
+   font-size:100px;
+    text-align: right;
+}
+
+.works{
+    width: 100%;
+    position: relative;
+    margin: 30px 0 30px 0;
+    padding: 20px 40px 20px 40px;
+    }
+
+    
+
+.works > .index-h2{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    font-size: 100px;
+    color: rgb(255, 255, 255, 0.5);
+    margin: 0;
+    font-weight: 200;
+    line-height: 0.5;
+}
+
+.works > h3{
+    position: absolute;
+    margin: 30px auto 30px auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 12;
+    font-size: 50px;
+    color: #1d1d1d;
+    
+}
+
+.works-photo{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 20px 10px 20px;
+}
+
+.works-photo > img{
+    
+    width: 35%;
+    padding: 20px 40px 20px 40px;
+    
+}
+
+/*会社概要*/
+
+#aboutus{
+    width: 100%;
+    position: relative;
+    margin: 60px 0 60px 0;
+    padding: 0;
+}
+
+.aboutus-index{
+    padding: 40px 0 40px 0;
+}
+
+.aboutus-index > .index-h2{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    font-size: 110px;
+    color: rgba(168, 228, 248, 0.25);
+    margin: 0;
+    font-weight: 200;
+    line-height: 0.5;
+}
+
+.aboutus-index > h3{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 12;
+    font-size: 60px;
+    color: #2f2e2e;
+}
+
+.aboutus {
+    width: 100%;
+    margin: 20px 0 20px 0;
+    display: flex;
+    justify-content: center;
+
+    }
+    
+    .aboutus th,
+    .aboutus td {
+    border: 1px solid #ccc;
+    padding: 20px;
+    }
+    
+    .aboutus th {
+    font-weight: bold;
+    background-color: #dedede; 
+    }
+    
+    @media screen and (max-width: 767px) {
+    .aboutus,
+    .aboutus tr,
+    .aboutus td,
+    .aboutus th {display:block;}
+    .aboutus th {width:auto;}
+    }
+
+    /*お問い合わせ*/
+    #Form {
+        margin-top: 80px;
+        
+        
+        
+    }
+      @media screen and (max-width: 480px) {
+        .Form {
+          margin-top: 40px;
+        }
+      }
+
+      .contact{
+        
+        width: 100%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        background-size: 50%;
+        font-size: 1.4em;
+        background-color:#2ABCA7;
+        /*真ん中にこない*/
+        text-align:center;
+        color:#FAFAFA;
+      }
+
+      .Form-Item {
+        border-top: 1px solid #ddd;
+        padding-top: 48px;
+        padding-bottom: 24px;
+        display: flex;
+        justify-content: center;
+      
+      }
+
+      @media screen and (max-width: 480px) {
+        .Form-Item {
+          padding-left: 14px;
+          padding-right: 14px;
+          padding-top: 16px;
+          padding-bottom: 16px;
+          flex-wrap: wrap;
+        }
+      }
+      .Form-Item:nth-child(5) {
+        border-bottom: 1px solid #ddd;
+      }
+      .Form-Item-Label {
+        width: 100%;
+        max-width: 248px;
+        letter-spacing: 0.05em;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      @media screen and (max-width: 480px) {
+        .Form-Item-Label {
+          max-width: inherit;
+          display: flex;
+          align-items: center;
+          font-size: 15px;
+        }
+      }
+      .Form-Item-Label.isMsg {
+        margin-top: 8px;
+        margin-bottom: auto;
+      }
+      @media screen and (max-width: 480px) {
+        .Form-Item-Label.isMsg {
+          margin-top: 0;
+        }
+      }
+      .Form-Item-Label-Required {
+        border-radius: 6px;
+        margin-right: 8px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        width: 48px;
+        display: inline-block;
+        text-align: center;
+        background: #5bc8ac;
+        color: #fff;
+        font-size: 14px;
+      }
+      @media screen and (max-width: 480px) {
+        .Form-Item-Label-Required {
+          border-radius: 4px;
+          padding-top: 4px;
+          padding-bottom: 4px;
+          width: 32px;
+          font-size: 10px;
+        }
+      }
+      .Form-Item-Input {
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        margin-left: 40px;
+        padding-left: 1em;
+        padding-right: 1em;
+        height: 48px;
+        flex: 1;
+        width: 100%;
+        max-width: 410px;
+        background: #eaedf2;
+        font-size: 18px;
+      }
+      @media screen and (max-width: 480px) {
+        .Form-Item-Input {
+          margin-left: 0;
+          margin-top: 18px;
+          height: 40px;
+          flex: inherit;
+          font-size: 15px;
+        }
+      }
+      .Form-Item-Textarea {
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        margin-left: 40px;
+        padding-left: 1em;
+        padding-right: 1em;
+        height: 216px;
+        flex: 1;
+        width: 100%;
+        max-width: 410px;
+        background: #eaedf2;
+        font-size: 18px;
+      }
+      @media screen and (max-width: 480px) {
+        .Form-Item-Textarea {
+          margin-top: 18px;
+          margin-left: 0;
+          height: 200px;
+          flex: inherit;
+          font-size: 15px;
+        }
+      }
+      .Form-Btn {
+        border-radius: 6px;
+        margin-top: 32px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 280px;
+        display: block;
+        letter-spacing: 0.05em;
+        background: #5bc8ac;
+        color: #fff;
+        font-weight: bold;
+        font-size: 20px;
+      }
+      @media screen and (max-width: 480px) {
+        .Form-Btn {
+          margin-top: 24px;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          width: 160px;
+          font-size: 16px;
+        }
+      }
+ 
+      footer{
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+      .Footer-Item{
+        background-image: url(images/footer_aicon.jpg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+    
+        .Footer-Item > img{
+            margin-top: 15px;
+            font-size: 20px;
+        }
+
+        .Footer-Item > p{
+            margin-bottom: 5px;
+            font-size: 15px;
+            color: #121111;
+            font-weight: bold;
+            text-shadow:1px 1px 0 #FFF, -1px -1px 0 #FFF,
+              -1px 1px 0 #FFF, 1px -1px 0 #FFF,
+              0px 1px 0 #FFF,  0-1px 0 #FFF,
+              -1px 0 0 #FFF, 1px 0 0 #FFF;
+        }
+
+        .Insta_Btn{
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .insta_btn2{/*ボタンの下地*/
+        color: #FFF;/*文字・アイコン色*/
+        border-radius: 7px;/*角丸に*/
+        position: relative;
+        display: inline-block;
+        height: 50px;/*高さ*/
+        width: 190px;/*幅*/
+        text-align: center;/*中身を中央寄せ*/
+        font-size: 25px;/*文字のサイズ*/
+        line-height: 50px;/*高さと合わせる*/
+        background: -webkit-linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+        background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;/*グラデーション①*/
+        overflow: hidden;/*はみ出た部分を隠す*/
+        text-decoration:none;/*下線は消す*/
+      }
+      
+      .insta_btn2:before{/*グラデーション②*/
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;/*全体を覆う*/
+        height: 100%;/*全体を覆う*/
+        background: -webkit-linear-gradient(15deg, #ffdb2c, rgb(249, 118, 76) 25%, rgba(255, 77, 64, 0) 50%) no-repeat;
+        background: linear-gradient(15deg, #ffdb2c, rgb(249, 118, 76) 25%, rgba(255, 77, 64, 0) 50%) no-repeat;
+      }
+      
+      .insta_btn2 .fa-instagram{/*アイコン*/
+        font-size: 35px;/*アイコンサイズ*/
+        position: relative;
+        top: 4px;/*アイコン位置の微調整*/
+      }
+      
+      .insta_btn2 span {/*テキスト*/
+        display:inline-block;
+        position: relative;
+        transition: .5s
+      }
+      
+      .insta_btn2:hover span{/*ホバーで一周回転*/
+        -webkit-transform: rotateX(360deg);
+        -ms-transform: rotateX(360deg);
+        transform: rotateX(360deg);
+      }
+      
+      
+    
