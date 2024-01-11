@@ -50,7 +50,7 @@ header {
 	transition: all 1.0s;
 }
 
-#nav-pc{
+.navigation{
     text-align: right;
     font-size: 14px;
     padding-top: 0;
@@ -58,72 +58,112 @@ header {
 }
 
  /* ナビゲーションのリンクの装飾設定 */
- #nav-pc > a {
+.navigation > a {
     text-decoration: none;
     margin-left: 20px;
 }
-#nav-pc > a:link {
+.navigation > a:link {
     color: #0d0d0d;
 }
-#nav-pc > a:visited {
+.navigation > a:visited {
     color: #0d0d0d;
 }
-#nav-pc > a:hover {
+.navigation > a:hover {
     color: #0d0d0d;
     text-decoration: underline;
 }
-#nav-pc > a:active {
+.navigation > a:active {
     color: #0d0d0d;
 }
 
 /* メインビジュアル*/
-@media screen and (min-width: 768px) {
-#main-visual {
-    padding: 0 0 30px 0;
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-}
-
-#main-visual > img {
-    max-width: 1250px;
-    position: relative;
-    z-index: 10;
-}
-
-#main-message {
-    font-family: 'Noto Serif JP', serif;
-    position: absolute;
-    top: 0;
-    left: 10px;
-    color: #434343;
-    max-width: 1000px;
+.carousel,
+.item,
+.active {
     height: 100%;
-    width: 100%;
-    z-index: 11;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-#main-message > h1 {
-    font-size: 50px;
-    position: relative;
-    margin: 0 0 0 0;
-   
-}
-#main-message > h4{
-    
-    
-    font-size: 20px;
-    color: rgb(67, 178, 243);
-  
-}
-#main-message > p{
-    font-size: 17px;
-    margin:0 0 40px 0;
-}
 }
 
+.carousel-inner {
+  height: 100%;
+  background: #000;
+}
+
+.carousel-caption{padding-bottom:80px;}
+
+h2{font-size: 60px;}
+p{padding:10px}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+
+
+.fill {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  opacity:0.6;
+}
+
+
+/**
+ * Change animation duration
+ */
+
+.animated{
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fadeInRight{
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100px, 0,0);
+    transform: translate3d(100px, 0, 0);
+  }
+
+  to{
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100px, 0, 0);
+    transform: translate3d(100px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+
+
+@media screen and (min-width: 768px) {
+
+  .hamburger-menu{
+    display: none;
+  }
+}
+
+ 
+
+/*サービス*/
 
 #service {
     padding: 0;
@@ -630,9 +670,97 @@ ipad用のスタイル
 =====================*/
 @media screen and (max-width: 480px) {
 
-/*効いてない*/
-  header > img{
-  max-width: 80%;
+  
+
+  header {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .hamburger-menu {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: none;
+    background: transparent;
+    appearance: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  .hamburger-menu__bar {
+    display: inline-block;
+    width: 44%;
+    height: 2px;
+    background: #242424;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .5s;
+  }
+  .hamburger-menu__bar:first-child {
+    top: 16px;
+  }
+  .hamburger-menu__bar:nth-child(2) {
+    top: 24px;
+  }
+  .hamburger-menu__bar:last-child {
+    top: 32px;
+  }
+  .hamburger-menu--open .hamburger-menu__bar {
+    top: 50%;
+  }
+  .hamburger-menu--open .hamburger-menu__bar:first-child {
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  }
+  .hamburger-menu--open .hamburger-menu__bar:last-child {
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  }
+  .hamburger-menu--open .hamburger-menu__bar:nth-child(2) {
+    display: none;
+  }
+
+  .navigation {
+    display: none;
+    background: #242424;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    z-index: 9999;
+  }
+
+  .navigation__list {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navigation__list-item {
+    border-bottom: solid 1px #474747;
+  }
+  .navigation__list-item:first-child {
+    border-top: solid 1px #474747;
+  }
+  .navigation__link {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    display: block;
+    padding: 24px 0;
+    transition: .5s;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .navigation__link:hover {
+      background: #333;
+    }
+  }
+
+
+#logo img{
+  width: 160px;
 }
 
   #nav-pc{
@@ -648,7 +776,9 @@ ipad用のスタイル
     margin-left: 5px;
 }
 
-
+.service-text{
+  position: relative;
+}
 
   .service-text-inner{
   max-width: 100%;
@@ -665,11 +795,10 @@ ipad用のスタイル
   padding: 50px;
 }
 
-.section-inner .index-h2{
+.service-text-inner > .index-h2{
   font-size: 65px;
-  top: 52%;
-  margin-left: 20px;
-  margin-right: 20px;
+  top: 0;
+  text-align: center;  
 }
 
 
@@ -763,7 +892,8 @@ text-align: center;
 
 .insta_btn2{
   height: 45px;/*高さ*/
-  width: 180px;/*幅*/
+  width: 165px;/*幅*/
+  font-size: 22px;
 }
 
 
