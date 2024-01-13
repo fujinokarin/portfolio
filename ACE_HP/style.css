@@ -42,7 +42,9 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-}
+        font-family:"Noto Sans JP", sans-serif;
+      } 
+
 
 #header-logo {
 	padding: 10px 0 10px 25px;
@@ -57,37 +59,38 @@ header {
 }
 
 /*設定の仕方がわからないところ*/
-.navigation{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-    padding-top: 0;
-    list-style-type: none;
-}
-
- /* ナビゲーションのリンクの装飾設定 */
-.navigation > a {
-    text-decoration: none;
-    margin-left: 20px;
-}
-.navigation > a:link {
-    color: #0d0d0d;
-}
-.navigation > a:visited {
-    color: #0d0d0d;
-}
-.navigation > a:hover {
-    color: #0d0d0d;
-    text-decoration: underline;
-}
-.navigation > a:active {
-    color: #0d0d0d;
-}
+ul{
+  display: table;
+  margin: 0 auto;
+  padding: 0;
+  width: 80%;
+  text-align: right;
+  }
+  ul li{
+  display: table-cell;
+  min-width: 50px;
+  }
+  ul li a{
+  display: block;
+  width: 100%;
+  padding: 0 0;
+  text-decoration: none;
+  color: #555;
+  font-weight: bold;
+  }
+  ul li.current{
+  background-color: #DEEBF7;
+  }
+  ul li.current a{
+  color: #555;
+  }
+  ul li:hover{
+  background-color: #9edffa;
+  }
 
 /* メインビジュアル*/
 #main-visual {
-  height: calc(100vh - 49px);
+  height: calc(100vh - 89px);
 }
 
 
@@ -99,13 +102,22 @@ header {
 
 .carousel-inner {
   height: 100%;
-  background: #000;
+  background: #313131;
 }
 
-.carousel-caption{padding-bottom:80px;}
+.carousel-caption {
+  padding-bottom: 150px;
+}
 
-h2{font-size: 60px;}
-p{padding:10px}
+.carousel-caption > h2{
+  font-size: 50px;
+}
+
+.carousel-caption > p{
+  font-size: 22px;
+}
+
+p{padding:5px}
 
 /* Background images are set within the HTML using inline CSS, not here */
 
@@ -621,50 +633,13 @@ p{padding:10px}
 ipad用のスタイル
 =====================*/
 @media screen and (max-width: 767px){
-  #main-visual {
-    overflow: hidden;
-    padding: 0 0 30px 0;
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-}
   
-  #main-visual > img{
-    max-width: 500px;
+ #main-visual {
+    height: 500px;  
   }
   
-   
-#main-message {
-  font-family: 'Noto Serif JP', serif;
-  position: absolute;
-  top: 0;
-  left: 10px;
-  color: #434343;
-  max-width: 1000px;
-  height: 100%;
-  width: 100%;
-  z-index: 11;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-#main-message > h1 {
-  font-size: 30px;
-  position: relative;
-  margin: 0 0 0 0;
- 
-}
-#main-message > h4{
   
   
-  font-size: 15px;
-  color: rgb(67, 178, 243);
-
-}
-#main-message > p{
-  font-size: 12px;
-  margin: 0 0 30px 0;
-}
 
 .service-text{
   width: 100%;
