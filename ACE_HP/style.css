@@ -1,3 +1,11 @@
+ /*
+ Theme Name: ACE
+ Theme URI: http://acetoyama.local/
+ Description: 空調設備ACEのホームページ
+ Version: 1.0.0
+ Author: FUJINO KARIN
+ Author URI: http://acetoyama.local/
+ */
 body {
     font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial,
         sans-serif;
@@ -89,6 +97,9 @@ ul.navigation__list{
   ul li:hover{
   background-color: #9edffa;
   }
+
+
+
 
 /* メインビジュアル*/
 #main-visual {
@@ -453,9 +464,23 @@ p{padding:5px}
     }
 
     @media screen and (max-width: 767px){
-      .aboutus-index > h3{
-        font-size: 50px;
+      .aboutus-index > .index-h2{
+        font-size: 75px;
       }
+      .aboutus-index > h3{
+        font-size: 27px;
+        font-weight: bold;
+        top: 10px;
+      }
+      table.aboutus{
+        margin: auto;
+        width: 380px;
+      }
+      .aboutus th,.aboutus td{
+        text-align: center;
+      }
+
+
     }
 
       @media screen and (max-width: 480px){  
