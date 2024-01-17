@@ -93,11 +93,38 @@
                     <div class="works">
                         <h3>施工事例</h3>  
                     </div>
-                    <div class="works-photo">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/works-before1.jpg" alt="施工事例のbefore">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/works-after1.jpg" alt="施工事例のafter">
-                    </div>
-                    <p>オフィスの古くなった業務用エアコンの入替工事を行いました。</p>
+                    <?php
+               //取得したい投稿記事などの条件を引数として渡す
+               $args = array(
+                   // 投稿タイプ
+                   'post_type'      => 'post',
+                   // カテゴリー名
+                   'category_name' => 'works',
+                   // 1ページに表示する投稿数
+                   'posts_per_page' => 3,
+               );
+               // データの取得
+               $posts = get_posts($args);
+             ?>
+               <!-- ループ処理 -->
+             <?php foreach($posts as $post): ?>
+             <?php setup_postdata($post); ?>
+
+             <div class="works-photo">
+             <?php if(have_posts()): while(have_posts()): the_post(); ?>
+                <!-- アイキャッチ画像を表示するテンプレートタグ -->
+                <?php the_post_thumbnail('thumbnail'); ?>
+                <?php endwhile; endif; ?>
+             </div>
+
+             <p><?php the_title(); ?></p>
+           
+
+             <?php endforeach; ?>
+             <!-- 使用した投稿データをリセット -->
+             <?php wp_reset_postdata(); ?>
+
+          </div>
             </section>
             
             <!-- 会社概要 -->
